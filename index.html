@@ -1,0 +1,341 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Christian - Software Engineer</title>
+    <!-- Inter Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Icons (Lucide) -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #fafafa;
+            color: #111827;
+        }
+        .hide-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .hide-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+    </style>
+</head>
+<body class="antialiased selection:bg-black selection:text-white">
+
+    <!-- Mobile Header (Hidden on Desktop) -->
+    <div class="lg:hidden bg-white border-b border-gray-200 p-4 sticky top-0 z-50 flex justify-between items-center">
+        <div class="flex items-center gap-3">
+            <img src="assets/images/2x2.jpg" alt="Profile" class="w-10 h-10 rounded-full object-cover">
+            <span class="font-bold">Christian</span>
+        </div>
+        <button class="p-2 bg-gray-100 rounded-md text-gray-600">
+            <i data-lucide="menu" class="w-5 h-5"></i>
+        </button>
+    </div>
+
+    <div class="max-w-4xl mx-auto flex flex-col lg:flex-row min-h-screen py-0 lg:py-6">
+        
+        <!-- Left Sidebar: Profile & Identity -->
+        <aside class="w-full lg:w-[260px] lg:sticky lg:top-6 h-fit p-5 md:p-6 bg-white lg:border border-gray-100 lg:rounded-[20px] lg:shadow-sm flex flex-col">
+            <div>
+                <!-- Profile Info -->
+                <div class="relative w-28 h-28 md:w-32 md:h-32 mb-5">
+                    <img src="assets/images/2x2.jpg" alt="Profile Picture" class="w-full h-full rounded-2xl object-cover shadow-sm border border-gray-100">
+                    <div class="absolute -bottom-3 -right-3 bg-white p-1 rounded-full">
+                         <i data-lucide="badge-check" class="w-8 h-8 text-blue-500 fill-white"></i>
+                    </div>
+                </div>
+                
+                <h1 class="text-2xl font-bold mb-2 text-gray-900">
+                    Christian Roldan
+                </h1>
+                
+                <p class="text-gray-600 font-medium text-xs mb-4 leading-relaxed">
+                    Aspiring Software Engineer
+                </p>
+
+                <p class="text-gray-500 text-[11px] flex items-center gap-1.5 mb-6 tracking-wider font-semibold">
+                    <i data-lucide="map-pin" class="w-3 h-3"></i> Olongapo, Philippines
+                </p>
+
+                <div class="w-full bg-gray-100 text-gray-800 px-4 py-2.5 rounded-lg text-xs font-medium flex items-center justify-center gap-2 border border-gray-200 shadow-sm mb-6">
+                    <i data-lucide="graduation-cap" class="w-4 h-4"></i>
+                    4th Year College
+                </div>
+
+                <hr class="border-gray-200 w-full mb-8">
+
+                <!-- Action Buttons -->
+                <div class="space-y-3 mb-10 w-full">
+                    <a href="assets/docs/RoldanC_Resume.pdf" target="_blank" class="w-full bg-black text-white px-4 py-2.5 rounded-lg text-xs font-medium flex items-center justify-center gap-2 hover:bg-gray-800 transition shadow-sm">
+                        <i data-lucide="file-text" class="w-4 h-4"></i> View my CV
+                    </a>
+                    <div class="grid grid-cols-2 gap-3">
+                        <a href="https://mail.google.com/mail/?view=cm&fs=1&to=roldancchristian@gmail.com" target="_blank" rel="noopener noreferrer" class="border border-gray-200 bg-white text-gray-700 px-3 py-2 rounded-lg text-xs font-medium flex items-center justify-center gap-2 hover:bg-gray-50 transition">
+                            <i data-lucide="mail" class="w-4 h-4"></i> Email
+                        </a>
+                        <button class="border border-gray-200 bg-white text-gray-700 px-3 py-2 rounded-lg text-xs font-medium flex items-center justify-center gap-2 hover:bg-gray-50 transition">
+                            <i data-lucide="book-open" class="w-4 h-4"></i> Blog
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Socials -->
+                <div class="flex gap-3 mb-6">
+                    <a href="https://www.linkedin.com/in/christian-roldan-512902395/" target="_blank" class="p-2.5 bg-gray-50 rounded-full text-gray-600 hover:text-black hover:bg-gray-100 transition">
+                        <i data-lucide="linkedin" class="w-4 h-4"></i>
+                    </a>
+                    <a href="https://github.com/tianysideup" target="_blank" class="p-2.5 bg-gray-50 rounded-full text-gray-600 hover:text-black hover:bg-gray-100 transition">
+                        <i data-lucide="github" class="w-4 h-4"></i>
+                    </a>
+                    <a href="https://www.facebook.com/christianroldan0110" target="_blank" class="p-2.5 bg-gray-50 rounded-full text-gray-600 hover:text-black hover:bg-gray-100 transition">
+                        <i data-lucide="facebook" class="w-4 h-4"></i>
+                    </a>
+                </div>
+            </div>
+        </aside>
+
+        <!-- Right Main Content -->
+        <main class="flex-grow lg:pl-6">
+            <div class="p-5 md:p-6 lg:p-0 max-w-2xl mx-auto space-y-8">
+                
+                <!-- Hero / About -->
+                <section>
+                    <h2 class="text-gray-400 font-medium tracking-wider text-xs mb-3">Introduction</h2>
+                    <div class="text-black text-[15px] leading-relaxed space-y-3 font-light dark:text-gray-300">
+                        <p class="text-lg md:text-xl text-black font-semibold mb-3 dark:text-black">Aspiring Full-Stack Developer with a focus on building scalable web and mobile applications.</p>
+                        <p class="dark:text-black">Experienced in developing AI-integrated platforms and management systems using React, Laravel, Firebase, and Supabase. Passionate about solving complex technical challenges through clean code and modern frameworks.</p>
+                        <p  class="dark:text-black">Seeking an IT Internship to apply expertise in modern web stacks to real-world software solutions. I am highly adaptable to new technologies and eager to collaborate with experienced teams to deliver impactful products.</p>
+                    </div>
+                </section>
+
+                <hr class="border-gray-200">
+
+                <!-- Extras: Education & Extracurriculars block -->
+                <section class="grid grid-cols-1 md:grid-cols-2 gap-5">
+                    <div>
+                        <h2 class="text-[15px] font-bold mb-4">Education</h2>
+                        <ul class="space-y-3">
+                            <li class="flex items-start gap-3">
+                                <div class="p-1.5 border border-gray-100 rounded-lg bg-white shadow-sm mt-0.5">
+                                    <i data-lucide="graduation-cap" class="w-3.5 h-3.5 text-gray-600"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-semibold text-gray-900 text-[13px]">Bachelor of Science in Information Technology (BSIT)</h4>
+                                    <p class="text-[11px] text-gray-500 mt-0.5">Lyceum of Subic Bay</p>
+                                    <p class="text-[10px] text-gray-400 mt-0.5">Expected Graduation: 2027</p>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div>
+                        <h2 class="text-[15px] font-bold mb-4">Specialized Interests</h2>
+                        <ul class="space-y-3">
+                            <li class="flex items-start gap-3">
+                                <div class="p-1.5 border border-gray-100 rounded-lg bg-white shadow-sm mt-0.5">
+                                    <i data-lucide="cpu" class="w-3.5 h-3.5 text-gray-600"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-semibold text-gray-900 text-[13px]">AI Integration & Mobile Dev</h4>
+                                    <p class="text-[11px] text-gray-500 mt-0.5">Primary Focus Areas</p>
+                                    <p class="text-[10px] text-gray-400 mt-0.5">Exploring applied artificial intelligence and cross-platform apps.</p>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </section>
+
+                <hr class="border-gray-200">
+
+                <!-- Capabilities & Tech Stack (Grid Layout) -->
+                <section>
+                    <div class="flex justify-between items-center mb-4">
+                        <h2 class="text-[15px] font-bold">Core Competencies</h2>
+                        <a href="core-competencies.html" class="flex items-center gap-1 text-[13px] text-gray-500 hover:text-black transition">
+                            View All <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
+                        </a>
+                    </div>
+
+                    <div class="grid grid-cols-2 md:grid-cols-4 gap-3">
+                        <!-- Frontend -->
+                        <div class="bg-white p-4 border border-gray-100 rounded-xl shadow-sm">
+                            <div class="flex items-center gap-2 mb-2 text-gray-900">
+                                <i data-lucide="layout" class="w-3.5 h-3.5 text-gray-400"></i>
+                                <h3 class="font-semibold text-gray-900 text-[13px]">Frontend</h3>
+                            </div>
+                            <ul class="space-y-1.5 text-[12px] text-gray-800 font-light leading-relaxed">
+                                <li>HTML / CSS</li>
+                                <li>JavaScript</li>
+                                <li>React</li>
+                               
+                            </ul>
+                        </div>
+
+                        <!-- Backend -->
+                        <div class="bg-white p-4 border border-gray-100 rounded-xl shadow-sm">
+                            <div class="flex items-center gap-2 mb-2 text-gray-900">
+                                <i data-lucide="server" class="w-3.5 h-3.5 text-gray-400"></i>
+                                <h3 class="font-semibold text-gray-900 text-[13px]">Backend</h3>
+                            </div>
+                            <ul class="space-y-1.5 text-[12px] text-gray-800 font-light leading-relaxed">
+                                <li>PHP (Laravel)</li>
+                                <li>Node.js</li>
+                            </ul>
+                        </div>
+
+                        <!-- Databases -->
+                        <div class="bg-white p-4 border border-gray-100 rounded-xl shadow-sm">
+                            <div class="flex items-center gap-2 mb-2 text-gray-900">
+                                <i data-lucide="database" class="w-3.5 h-3.5 text-gray-400"></i>
+                                <h3 class="font-semibold text-gray-900 text-[13px]">Databases</h3>
+                            </div>
+                            <ul class="space-y-1.5 text-[12px] text-gray-800 font-light leading-relaxed">
+                                <li>Firebase</li>
+                                <li>Supabase</li>
+                            </ul>
+                        </div>
+
+                        <!-- Tools & Deploy -->
+                        <div class="bg-white p-4 border border-gray-100 rounded-xl shadow-sm">
+                            <div class="flex items-center gap-2 mb-2 text-gray-900">
+                                <i data-lucide="wrench" class="w-3.5 h-3.5 text-gray-400"></i>
+                                <h3 class="font-semibold text-gray-900 text-[13px]">Tools</h3>
+                            </div>
+                            <ul class="space-y-1.5 text-[12px] text-gray-800 font-light leading-relaxed">
+                                <li>Vercel</li>
+                                <li>GitHub</li>
+                                <li>Expo Go</li>
+                            </ul>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Select Works / Projects -->
+                <section>
+                    <div class="flex justify-between items-center mb-4">
+                        <h2 class="text-[15px] font-bold">School Projects</h2>
+                    </div>
+                    
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4 auto-rows-fr">
+                        <a href="atlas.html" class="flex flex-col bg-white border border-gray-100 p-5 rounded-2xl shadow-sm hover:shadow-md hover:border-gray-200 transition group h-full">
+                            <div class="flex items-center justify-between mb-3">
+                                <div class="flex items-center gap-3">
+                                    <div class="w-8 h-8 bg-black rounded-lg border border-gray-800 flex items-center justify-center p-1.5 shadow-sm shrink-0 overflow-hidden">
+                                        <img src="assets/images/app-logo.png" alt="Atlas Logo" class="w-full h-full object-contain">
+                                    </div>
+                                    <h3 class="font-semibold text-gray-900 text-[13px]">Atlas</h3>
+                                </div>
+                                <i data-lucide="arrow-up-right" class="w-4 h-4 text-gray-300 group-hover:text-black transition"></i>
+                            </div>
+                            <p class="text-[12px] text-gray-800 font-light leading-relaxed flex-grow">A Mobile-based Fitness Platform with AI Workout Generation, Nutrition Tracking, and Fitness Community.</p>
+                        </a>
+
+                        <a href="accuracylab.html" class="flex flex-col bg-white border border-gray-100 p-5 rounded-2xl shadow-sm hover:shadow-md hover:border-gray-200 transition group h-full">
+                            <div class="flex items-center justify-between mb-3">
+                                <div class="flex items-center gap-3">
+                                    <div class="w-8 h-8 bg-black rounded-lg border border-gray-800 flex items-center justify-center p-1.5 shadow-sm shrink-0 overflow-hidden">
+                                        <img src="assets/images/app-logo.png" alt="Atlas Logo Placeholder" class="w-full h-full object-contain">
+                                    </div>
+                                    <h3 class="font-semibold text-gray-900 text-[13px]">AccuracyLab</h3>
+                                </div>
+                                <i data-lucide="arrow-up-right" class="w-4 h-4 text-gray-300 group-hover:text-black transition"></i>
+                            </div>
+                            <p class="text-[12px] text-gray-800 font-light leading-relaxed flex-grow">Design and Development of an Event-Driven Typing and Precision Aim-Training Game Using Integrated Keyboard and Mouse Interactions</p>
+                        </a>
+
+                        <a href="#" class="flex flex-col bg-white border border-gray-100 p-5 rounded-2xl shadow-sm hover:shadow-md hover:border-gray-200 transition group h-full">
+                            <div class="flex items-center justify-between mb-3">
+                                <div class="flex items-center gap-3">
+                                    <div class="w-8 h-8 bg-black rounded-lg border border-gray-800 flex items-center justify-center p-1.5 shadow-sm shrink-0 overflow-hidden">
+                                        <img src="assets/images/app-logo.png" alt="Atlas Logo Placeholder" class="w-full h-full object-contain">
+                                    </div>
+                                    <h3 class="font-semibold text-gray-900 text-[13px]">Velocity</h3>
+                                </div>
+                                <i data-lucide="arrow-up-right" class="w-4 h-4 text-gray-300 group-hover:text-black transition"></i>
+                            </div>
+                            <p class="text-[12px] text-gray-800 font-light leading-relaxed flex-grow">A Web and Mobile-based Vehicle Rental Management System</p>
+                        </a>
+
+                        <a href="#" class="flex flex-col bg-white border border-gray-100 p-5 rounded-2xl shadow-sm hover:shadow-md hover:border-gray-200 transition group h-full">
+                            <div class="flex items-center justify-between mb-3">
+                                <div class="flex items-center gap-3">
+                                    <div class="w-8 h-8 bg-black rounded-lg border border-gray-800 flex items-center justify-center p-1.5 shadow-sm shrink-0 overflow-hidden">
+                                        <img src="assets/images/app-logo.png" alt="Atlas Logo Placeholder" class="w-full h-full object-contain">
+                                    </div>
+                                    <h3 class="font-semibold text-gray-900 text-[13px]">ToneSeeker</h3>
+                                </div>
+                                <i data-lucide="arrow-up-right" class="w-4 h-4 text-gray-300 group-hover:text-black transition"></i>
+                            </div>
+                            <p class="text-[12px] text-gray-800 font-light leading-relaxed flex-grow">Intelligent workout tracker bridging fitness with artificial intelligence.</p>
+                        </a>
+                    </div>
+                </section>
+
+                <hr class="border-gray-200">
+
+                <!-- Socials Section -->
+                <div class="mb-10">
+                    <h2 class="text-[15px] font-bold mb-4">Connect with me</h2>
+                    <div class="grid grid-cols-1 sm:grid-cols-3 gap-3">
+                        <a href="https://github.com/tianysideup" target="_blank" class="flex items-center justify-center sm:justify-start gap-2.5 p-3 bg-white rounded-xl border border-gray-100 hover:border-gray-200 shadow-sm hover:shadow-md transition group">
+                            <div class="p-1.5 bg-gray-50 rounded-lg text-gray-600 group-hover:text-black group-hover:bg-white transition-colors">
+                                <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                                    <path fill-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z" clip-rule="evenodd"></path>
+                                </svg>
+                            </div>
+                            <span class="text-[12px] font-medium text-gray-700 leading-relaxed group-hover:text-black">GitHub</span>
+                        </a>
+                        <a href="https://www.linkedin.com/in/christian-roldan-512902395/" target="_blank" class="flex items-center justify-center sm:justify-start gap-2.5 p-3 bg-white rounded-xl border border-gray-100 hover:border-gray-200 shadow-sm hover:shadow-md transition group">
+                            <div class="p-1.5 bg-gray-50 rounded-lg text-gray-600 group-hover:text-blue-700 group-hover:bg-blue-50 transition-colors">
+                                <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                                    <path fill-rule="evenodd" d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" clip-rule="evenodd"></path>
+                                </svg>
+                            </div>
+                            <span class="text-[12px] font-medium text-gray-700 leading-relaxed group-hover:text-black">LinkedIn</span>
+                        </a>
+                        <a href="https://www.facebook.com/christianroldan0110" target="_blank" class="flex items-center justify-center sm:justify-start gap-2.5 p-3 bg-white rounded-xl border border-gray-100 hover:border-gray-200 shadow-sm hover:shadow-md transition group">
+                            <div class="p-1.5 bg-gray-50 rounded-lg text-gray-600 group-hover:text-blue-600 group-hover:bg-blue-50 transition-colors">
+                                <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                                    <path fill-rule="evenodd" d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12z" clip-rule="evenodd"></path>
+                                </svg>
+                            </div>
+                            <span class="text-[13px] text-gray-500 leading-relaxed group-hover:text-black">Facebook</span>
+                        </a>
+                    </div>
+                </div>
+
+                <footer class="pt-8 pb-6 border-t border-gray-200 mt-12 flex flex-col md:flex-row justify-between items-center gap-4">
+                    <p class="text-xs text-gray-400 font-medium">&copy; 2026 Christian Roldan. All rights reserved.</p>
+                    <a href="#" class="flex items-center gap-1 text-[13px] text-gray-500 hover:text-black transition">
+                        Back to top <i data-lucide="arrow-up" class="w-3.5 h-3.5"></i>
+                    </a>
+                </footer>
+
+            </div>
+        </main>
+    </div>
+
+    <script>
+        lucide.createIcons();
+    </script>
+</body>
+</html>

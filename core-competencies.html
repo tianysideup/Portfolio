@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Christian - Core Competencies</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #fafafa;
+            color: #111827;
+        }
+    </style>
+</head>
+<body class="antialiased selection:bg-black selection:text-white">
+
+    <!-- Mobile Header -->
+    <div class="lg:hidden bg-white border-b border-gray-200 p-4 sticky top-0 z-50 flex justify-between items-center">
+        <div class="flex items-center gap-3">
+            <a href="index.html" class="p-2 bg-gray-50 rounded-md text-gray-600 hover:bg-gray-100 transition">
+                <i data-lucide="arrow-left" class="w-4 h-4"></i>
+            </a>
+            <span class="font-bold">Core Competencies</span>
+        </div>
+    </div>
+
+    <div class="max-w-4xl mx-auto flex flex-col lg:flex-row min-h-screen py-0 lg:py-6">
+        
+        <!-- Left Sidebar: Basic Nav -->
+        <aside class="w-full lg:w-[260px] lg:sticky lg:top-6 h-fit p-5 md:p-6 bg-white lg:border border-gray-100 lg:rounded-[20px] lg:shadow-sm hidden lg:flex flex-col">
+            <a href="index.html" class="flex items-center gap-2 text-gray-500 hover:text-black font-medium text-sm transition mb-6">
+                <i data-lucide="arrow-left" class="w-4 h-4"></i> Back to Profile
+            </a>
+            <h1 class="text-xl font-bold mb-2 text-gray-900">
+                Core Competencies
+            </h1>
+            <p class="text-gray-500 text-[13px] leading-relaxed">
+                A comprehensive overview of my technical stack, frameworks, tools, and methodologies.
+            </p>
+        </aside>
+
+        <!-- Right Main Content -->
+        <main class="flex-grow lg:pl-6 w-full">
+            <div class="p-5 md:p-6 lg:p-0 max-w-2xl mx-auto space-y-8">
+                
+                <section>
+                    <div class="flex justify-between items-center mb-6">
+                        <h2 class="text-xl font-bold tracking-tight text-gray-900">Complete Skill Stack</h2>
+                    </div>
+
+                    <!-- Extended Grid -->
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                        
+                        <!-- Frontend -->
+                        <div class="bg-white p-5 border border-gray-100 rounded-xl shadow-sm">
+                            <div class="flex items-center gap-2 mb-3">
+                                <i data-lucide="layout" class="w-4 h-4 text-gray-400"></i>
+                                <h3 class="font-semibold text-gray-900 text-base">Frontend</h3>
+                            </div>
+                            <ul class="space-y-2 text-[13px] text-gray-800 font-light leading-relaxed">
+                                <li>HTML5 & CSS3</li>
+                                <li>JavaScript (ES6+)</li>
+                                <li>React.js & Next.js</li>
+                                <li>Tailwind CSS & Bootstrap</li>
+                                <li>React Native (Expo)</li>
+                            </ul>
+                        </div>
+
+                        <!-- Backend -->
+                        <div class="bg-white p-5 border border-gray-100 rounded-xl shadow-sm">
+                            <div class="flex items-center gap-2 mb-3">
+                                <i data-lucide="server" class="w-4 h-4 text-gray-400"></i>
+                                <h3 class="font-semibold text-gray-900 text-base">Backend</h3>
+                            </div>
+                            <ul class="space-y-2 text-[13px] text-gray-800 font-light leading-relaxed">
+                                <li>PHP (Laravel Framework)</li>
+                                <li>Node.js (Express)</li>
+                                <li>Python (Flask/Django basic)</li>
+                                <li>RESTful API Development</li>
+                            </ul>
+                        </div>
+
+                        <!-- Databases -->
+                        <div class="bg-white p-5 border border-gray-100 rounded-xl shadow-sm">
+                            <div class="flex items-center gap-2 mb-3">
+                                <i data-lucide="database" class="w-4 h-4 text-gray-400"></i>
+                                <h3 class="font-semibold text-gray-900 text-base">Databases & Cloud</h3>
+                            </div>
+                            <ul class="space-y-2 text-[13px] text-gray-800 font-light leading-relaxed">
+                                <li>MySQL & PostgreSQL</li>
+                                <li>Firebase (Auth, Firestore)</li>
+                                <li>Supabase</li>
+                                <li>MongoDB (NoSQL basics)</li>
+                            </ul>
+                        </div>
+
+                        <!-- Tools & DevOps -->
+                        <div class="bg-white p-5 border border-gray-100 rounded-xl shadow-sm">
+                            <div class="flex items-center gap-2 mb-3">
+                                <i data-lucide="wrench" class="w-4 h-4 text-gray-400"></i>
+                                <h3 class="font-semibold text-gray-900 text-base">Tools & Deploy</h3>
+                            </div>
+                            <ul class="space-y-2 text-[13px] text-gray-800 font-light leading-relaxed">
+                                <li>Git & GitHub (Version Control)</li>
+                                <li>Vercel & Heroku Deployment</li>
+                                <li>Postman (API Testing)</li>
+                                <li>VS Code Environment</li>
+                            </ul>
+                        </div>
+
+                        <!-- Design & Other -->
+                        <div class="bg-white p-5 border border-gray-100 rounded-xl shadow-sm sm:col-span-2">
+                            <div class="flex items-center gap-2 mb-3">
+                                <i data-lucide="pen-tool" class="w-4 h-4 text-gray-400"></i>
+                                <h3 class="font-semibold text-gray-900 text-base">Design & Methodologies</h3>
+                            </div>
+                            <div class="grid grid-cols-2 gap-4">
+                                <ul class="space-y-2 text-[13px] text-gray-800 font-light leading-relaxed">
+                                    <li>Figma (UI/UX Prototyping)</li>
+                                    <li>Responsive Web Design</li>
+                                    <li>Agile / Scrum Basics</li>
+                                </ul>
+                                <ul class="space-y-2 text-[13px] text-gray-800 font-light leading-relaxed">
+                                    <li>Search Engine Optimization (SEO)</li>
+                                    <li>Digital Marketing principles</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                    </div>
+                </section>
+
+                <footer class="pt-8 pb-6 border-t border-gray-200 mt-12 flex flex-col md:flex-row justify-between items-center gap-4">
+                    <p class="text-xs text-gray-400 font-medium">&copy; 2026 Christian Roldan. All rights reserved.</p>
+                </footer>
+
+            </div>
+        </main>
+    </div>
+
+    <script>
+        lucide.createIcons();
+    </script>
+</body>
+</html>
