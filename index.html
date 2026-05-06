@@ -86,14 +86,14 @@
 
                 <!-- Action Buttons -->
                 <div class="space-y-3 mb-10 w-full">
-                    <a href="assets/docs/RoldanC_Resume.pdf" target="_blank" class="w-full bg-black text-white px-4 py-2.5 rounded-lg text-xs font-medium flex items-center justify-center gap-2 hover:bg-gray-800 transition shadow-sm">
+                    <a href="assets/docs/RoldanChristian.pdf" target="_blank" class="w-full bg-black text-white px-4 py-2.5 rounded-lg text-xs font-medium flex items-center justify-center gap-2 hover:bg-gray-800 transition shadow-sm">
                         <i data-lucide="file-text" class="w-4 h-4"></i> View my CV
                     </a>
                     <div class="grid grid-cols-2 gap-3">
                         <a href="https://mail.google.com/mail/?view=cm&fs=1&to=roldancchristian@gmail.com" target="_blank" rel="noopener noreferrer" class="border border-gray-200 bg-white text-gray-700 px-3 py-2 rounded-lg text-xs font-medium flex items-center justify-center gap-2 hover:bg-gray-50 transition">
                             <i data-lucide="mail" class="w-4 h-4"></i> Email
                         </a>
-                        <button class="border border-gray-200 bg-white text-gray-700 px-3 py-2 rounded-lg text-xs font-medium flex items-center justify-center gap-2 hover:bg-gray-50 transition">
+                        <button type="button" onclick="showComingSoon()" class="border border-gray-200 bg-white text-gray-700 px-3 py-2 rounded-lg text-xs font-medium flex items-center justify-center gap-2 hover:bg-gray-50 transition">
                             <i data-lucide="book-open" class="w-4 h-4"></i> Blog
                         </button>
                     </div>
@@ -158,7 +158,7 @@
                                 <div>
                                     <h4 class="font-semibold text-gray-900 text-[13px]">AI Integration & Mobile Dev</h4>
                                     <p class="text-[11px] text-gray-500 mt-0.5">Primary Focus Areas</p>
-                                    <p class="text-[10px] text-gray-400 mt-0.5">Exploring applied artificial intelligence and cross-platform apps.</p>
+                                    <p class="text-[10px] text-gray-400 mt-0.5">Exploring applied artificial intelligence and API's.</p>
                                 </div>
                             </li>
                         </ul>
@@ -253,8 +253,8 @@
                         <a href="accuracylab.html" class="flex flex-col bg-white border border-gray-100 p-5 rounded-2xl shadow-sm hover:shadow-md hover:border-gray-200 transition group h-full">
                             <div class="flex items-center justify-between mb-3">
                                 <div class="flex items-center gap-3">
-                                    <div class="w-8 h-8 bg-black rounded-lg border border-gray-800 flex items-center justify-center p-1.5 shadow-sm shrink-0 overflow-hidden">
-                                        <img src="assets/images/app-logo.png" alt="Atlas Logo Placeholder" class="w-full h-full object-contain">
+                                    <div class="w-8 h-8 bg-white rounded-lg border border-gray-200 flex items-center justify-center p-1.5 shadow-sm shrink-0 overflow-hidden">
+                                        <img src="assets/images/accuracylab.png" alt="AccuracyLab Logo" class="w-full h-full object-contain">
                                     </div>
                                     <h3 class="font-semibold text-gray-900 text-[13px]">AccuracyLab</h3>
                                 </div>
@@ -263,11 +263,11 @@
                             <p class="text-[12px] text-gray-800 font-light leading-relaxed flex-grow">Design and Development of an Event-Driven Typing and Precision Aim-Training Game Using Integrated Keyboard and Mouse Interactions</p>
                         </a>
 
-                        <a href="javascript:void(0)" class="flex flex-col bg-white border border-gray-100 p-5 rounded-2xl shadow-sm hover:shadow-md hover:border-gray-200 transition group h-full">
+                        <a href="velocity.html" class="flex flex-col bg-white border border-gray-100 p-5 rounded-2xl shadow-sm hover:shadow-md hover:border-gray-200 transition group h-full">
                             <div class="flex items-center justify-between mb-3">
                                 <div class="flex items-center gap-3">
-                                    <div class="w-8 h-8 bg-black rounded-lg border border-gray-800 flex items-center justify-center p-1.5 shadow-sm shrink-0 overflow-hidden">
-                                        <img src="assets/images/app-logo.png" alt="Atlas Logo Placeholder" class="w-full h-full object-contain">
+                                    <div class="w-8 h-8 bg-white rounded-lg border border-gray-200 flex items-center justify-center p-1.5 shadow-sm shrink-0 overflow-hidden">
+                                        <img src="assets/images/VELOCITY.png" alt="Velocity Logo" class="w-full h-full object-contain scale-150">
                                     </div>
                                     <h3 class="font-semibold text-gray-900 text-[13px]">Velocity</h3>
                                 </div>
@@ -276,11 +276,11 @@
                             <p class="text-[12px] text-gray-800 font-light leading-relaxed flex-grow">A Web and Mobile-based Vehicle Rental Management System</p>
                         </a>
 
-                        <a href="javascript:void(0)" class="flex flex-col bg-white border border-gray-100 p-5 rounded-2xl shadow-sm hover:shadow-md hover:border-gray-200 transition group h-full">
+                        <a href="toneseeker.html" class="flex flex-col bg-white border border-gray-100 p-5 rounded-2xl shadow-sm hover:shadow-md hover:border-gray-200 transition group h-full">
                             <div class="flex items-center justify-between mb-3">
                                 <div class="flex items-center gap-3">
                                     <div class="w-8 h-8 bg-black rounded-lg border border-gray-800 flex items-center justify-center p-1.5 shadow-sm shrink-0 overflow-hidden">
-                                        <img src="assets/images/app-logo.png" alt="Atlas Logo Placeholder" class="w-full h-full object-contain">
+                                        <img src="assets/images/Toneseeker.png" alt="ToneSeeker Logo" class="w-full h-full object-contain scale-150">
                                     </div>
                                     <h3 class="font-semibold text-gray-900 text-[13px]">ToneSeeker</h3>
                                 </div>
@@ -335,8 +335,40 @@
         </main>
     </div>
 
+    <!-- Notification Card -->
+    <div id="notificationCard" class="fixed bottom-6 right-6 w-96 bg-white border border-gray-200 rounded-2xl shadow-lg p-0 flex gap-0 items-stretch opacity-0 transform translate-y-8 transition-all duration-500 z-50 pointer-events-none overflow-hidden">
+        <img src="assets/images/ads.png" alt="Notification" class="w-40 h-40 object-cover flex-shrink-0">
+        <div class="flex-grow p-4 flex flex-col justify-center">
+            <h3 class="font-semibold text-gray-900 text-sm mb-1">Looking to hire?</h3>
+            <p class="text-xs text-gray-600 mb-3">Let's collaborate on your next project. I'm available for freelance and contract work.</p>
+            <a href="https://mail.google.com/mail/?view=cm&fs=1&to=roldancchristian@gmail.com" target="_blank" class="text-xs font-medium text-blue-600 hover:text-blue-700 transition">Get in touch →</a>
+        </div>
+        <button onclick="closeNotification()" class="text-gray-400 hover:text-gray-600 transition flex-shrink-0 pr-4">
+            <i data-lucide="x" class="w-5 h-5"></i>
+        </button>
+    </div>
+
     <script>
         lucide.createIcons();
+
+        // Show notification after 3 seconds
+        setTimeout(() => {
+            const card = document.getElementById('notificationCard');
+            card.classList.remove('opacity-0', 'translate-y-8', 'pointer-events-none');
+            card.classList.add('opacity-100', 'translate-y-0');
+        }, 3000);
+
+        function closeNotification() {
+            const card = document.getElementById('notificationCard');
+            card.classList.add('opacity-0', 'translate-y-8', 'pointer-events-none');
+            setTimeout(() => {
+                card.style.display = 'none';
+            }, 500);
+        }
+
+        function showComingSoon() {
+            alert('Coming soon!');
+        }
     </script>
 </body>
 </html>
