@@ -5,10 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Christian - Software Engineer</title>
     <link rel="icon" href="assets/images/2x2.jpg" />
-    <!-- Inter Font -->
+    <!-- Global Styles & Font -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/global.css">
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
     <!-- Icons (Lucide) -->
@@ -18,7 +18,7 @@
             theme: {
                 extend: {
                     fontFamily: {
-                        sans: ['Inter', 'sans-serif'],
+                        sans: ['Plus Jakarta Sans', 'sans-serif'],
                     }
                 }
             }
@@ -26,7 +26,6 @@
     </script>
     <style>
         body {
-            font-family: 'Inter', sans-serif;
             background-color: #fafafa;
             color: #111827;
         }
@@ -36,6 +35,41 @@
         .hide-scrollbar {
             -ms-overflow-style: none;
             scrollbar-width: none;
+        }
+        .glass {
+            background: rgba(255, 255, 255, 0.65);
+            -webkit-backdrop-filter: blur(16px) saturate(180%);
+            backdrop-filter: blur(16px) saturate(180%);
+            border: 1px solid rgba(255, 255, 255, 0.8);
+            box-shadow: 0 8px 32px rgba(17, 24, 39, 0.12);
+        }
+        .glass-dark {
+            background: rgba(17, 24, 39, 0.75);
+            -webkit-backdrop-filter: blur(16px) saturate(180%);
+            backdrop-filter: blur(16px) saturate(180%);
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            box-shadow: 0 8px 32px rgba(17, 24, 39, 0.25);
+        }
+        #chatPanel {
+            transition: opacity 0.3s ease, transform 0.3s ease;
+        }
+        #chatPanel.chat-hidden {
+            opacity: 0;
+            transform: translateY(12px) scale(0.97);
+            pointer-events: none;
+        }
+        .chat-bubble-bot {
+            background: rgba(255, 255, 255, 0.85);
+            border: 1px solid rgba(229, 231, 235, 0.8);
+        }
+        .typing-dot {
+            animation: typingBounce 1.2s infinite ease-in-out;
+        }
+        .typing-dot:nth-child(2) { animation-delay: 0.15s; }
+        .typing-dot:nth-child(3) { animation-delay: 0.3s; }
+        @keyframes typingBounce {
+            0%, 60%, 100% { transform: translateY(0); opacity: 0.4; }
+            30% { transform: translateY(-4px); opacity: 1; }
         }
     </style>
 </head>
@@ -122,7 +156,7 @@
                 <section>
                     <h2 class="text-gray-400 font-medium tracking-wider text-xs mb-3">Introduction</h2>
                     <div class="text-black text-[15px] leading-relaxed space-y-3 font-light dark:text-gray-300">
-                        <p class="text-lg md:text-xl text-black font-semibold mb-3 dark:text-black">Aspiring Full-Stack Developer with a focus on building scalable web and mobile applications.</p>
+                        <p class="text-lg md:text-xl text-black font-semibold mb-3 dark:text-black">Junior Full-Stack Developer with a focus on building scalable web and mobile applications.</p>
                         <p class="dark:text-black">Experienced in developing AI-integrated platforms and management systems using React, Laravel, Firebase, and Supabase. Passionate about solving complex technical challenges through clean code and modern frameworks.</p>
                         <p  class="dark:text-black">Seeking an IT Internship to apply expertise in modern web stacks to real-world software solutions. I am highly adaptable to new technologies and eager to collaborate with experienced teams to deliver impactful products.</p>
                     </div>
@@ -336,7 +370,7 @@
     </div>
 
     <!-- Notification Card -->
-    <div id="notificationCard" class="fixed bottom-6 right-6 w-96 bg-white border border-gray-200 rounded-2xl shadow-lg p-0 flex gap-0 items-stretch opacity-0 transform translate-y-8 transition-all duration-500 z-50 pointer-events-none overflow-hidden">
+    <div id="notificationCard" class="fixed bottom-28 right-6 w-96 bg-white border border-gray-200 rounded-2xl shadow-lg p-0 flex gap-0 items-stretch opacity-0 transform translate-y-8 transition-all duration-500 z-50 pointer-events-none overflow-hidden">
         <img src="assets/images/ads.png" alt="Notification" class="w-40 h-40 object-cover flex-shrink-0">
         <div class="flex-grow p-4 flex flex-col justify-center">
             <h3 class="font-semibold text-gray-900 text-sm mb-1">Looking to hire?</h3>
@@ -348,8 +382,65 @@
         </button>
     </div>
 
+    <!-- Chatbot Widget -->
+    <div class="fixed bottom-6 right-6 z-[60] flex flex-col items-end gap-3">
+        <!-- Chat Panel -->
+        <div id="chatPanel" class="chat-hidden glass rounded-[20px] w-[calc(100vw-3rem)] sm:w-[360px] h-[480px] max-h-[70vh] flex flex-col overflow-hidden origin-bottom-right">
+            <!-- Header -->
+            <div class="flex items-center justify-between px-4 py-3 border-b border-white/60">
+                <div class="flex items-center gap-3">
+                    <div class="relative">
+                        <img src="assets/images/2x2.jpg" alt="Christian" class="w-9 h-9 rounded-full object-cover border border-white/80 shadow-sm">
+                        <span class="absolute bottom-0 right-0 w-2.5 h-2.5 bg-green-500 rounded-full border-2 border-white"></span>
+                    </div>
+                    <div>
+                        <h3 class="font-semibold text-gray-900 text-[13px] leading-tight">Christian's Assistant</h3>
+                        <p class="text-[10px] text-gray-500">Usually replies instantly</p>
+                    </div>
+                </div>
+                <button onclick="toggleChat()" class="p-1.5 rounded-full text-gray-500 hover:text-gray-900 hover:bg-white/60 transition" aria-label="Close chat">
+                    <i data-lucide="x" class="w-4 h-4"></i>
+                </button>
+            </div>
+
+            <!-- Messages -->
+            <div id="chatMessages" class="flex-grow overflow-y-auto hide-scrollbar p-4 space-y-3">
+                <div class="chat-bubble-bot rounded-2xl rounded-tl-md px-3.5 py-2.5 text-[12px] text-gray-800 leading-relaxed max-w-[85%] shadow-sm">
+                    Hi there! 👋 I'm Christian's portfolio assistant. Ask me about his <b>skills</b>, <b>projects</b>, <b>education</b>, or how to <b>contact</b> him.
+                </div>
+            </div>
+
+            <!-- Quick replies -->
+            <div class="px-4 pb-2 flex flex-wrap gap-1.5">
+                <button onclick="sendQuick('What are his skills?')" class="text-[10px] font-medium px-2.5 py-1 rounded-full bg-white/70 border border-gray-200/80 text-gray-600 hover:bg-white hover:text-black transition">Skills</button>
+                <button onclick="sendQuick('Tell me about his projects')" class="text-[10px] font-medium px-2.5 py-1 rounded-full bg-white/70 border border-gray-200/80 text-gray-600 hover:bg-white hover:text-black transition">Projects</button>
+                <button onclick="sendQuick('How can I contact him?')" class="text-[10px] font-medium px-2.5 py-1 rounded-full bg-white/70 border border-gray-200/80 text-gray-600 hover:bg-white hover:text-black transition">Contact</button>
+            </div>
+
+            <!-- Input -->
+            <div class="p-3 border-t border-white/60">
+                <form id="chatForm" class="flex items-center gap-2" onsubmit="handleChatSubmit(event)">
+                    <input id="chatInput" type="text" placeholder="Type a message..." autocomplete="off"
+                        class="flex-grow bg-white/70 border border-gray-200/80 rounded-full px-4 py-2 text-[12px] text-gray-800 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-gray-900/10 focus:border-gray-300 transition">
+                    <button type="submit" class="w-8 h-8 bg-black text-white rounded-full flex items-center justify-center hover:bg-gray-800 transition shrink-0 shadow-sm" aria-label="Send message">
+                        <i data-lucide="arrow-up" class="w-4 h-4"></i>
+                    </button>
+                </form>
+            </div>
+        </div>
+
+        <!-- Floating Toggle Button -->
+        <button id="chatToggle" onclick="toggleChat()" aria-label="Open chat"
+            class="glass w-14 h-14 rounded-full flex items-center justify-center text-gray-900 hover:scale-105 active:scale-95 transition-transform duration-200">
+            <i data-lucide="message-circle" id="chatIconOpen" class="w-6 h-6"></i>
+            <i data-lucide="chevron-down" id="chatIconClose" class="w-6 h-6 hidden"></i>
+        </button>
+    </div>
+
     <script>
         lucide.createIcons();
+
+        const CHAT_WEBHOOK_URL = 'https://menatwork10.app.n8n.cloud/webhook-test/christian-resume';
 
         // Show notification after 3 seconds
         setTimeout(() => {
@@ -368,6 +459,71 @@
 
         function showComingSoon() {
             alert('Coming soon!');
+        }
+
+        // ---------- Chatbot ----------
+        const chatPanel = document.getElementById('chatPanel');
+        const chatMessages = document.getElementById('chatMessages');
+        const chatInput = document.getElementById('chatInput');
+
+        function toggleChat() {
+            const isOpen = !chatPanel.classList.contains('chat-hidden');
+            chatPanel.classList.toggle('chat-hidden');
+            document.getElementById('chatIconOpen').classList.toggle('hidden', !isOpen);
+            document.getElementById('chatIconClose').classList.toggle('hidden', isOpen);
+            if (!isOpen) chatInput.focus();
+        }
+
+        function addMessage(text, isUser) {
+            const bubble = document.createElement('div');
+            if (isUser) {
+                bubble.className = 'bg-black text-white rounded-2xl rounded-tr-md px-3.5 py-2.5 text-[12px] leading-relaxed max-w-[85%] ml-auto shadow-sm';
+                bubble.textContent = text;
+            } else {
+                bubble.className = 'chat-bubble-bot rounded-2xl rounded-tl-md px-3.5 py-2.5 text-[12px] text-gray-800 leading-relaxed max-w-[85%] shadow-sm';
+                bubble.innerHTML = text;
+            }
+            chatMessages.appendChild(bubble);
+            chatMessages.scrollTop = chatMessages.scrollHeight;
+            return bubble;
+        }
+
+        async function sendToWebhook(text) {
+            const url = new URL(CHAT_WEBHOOK_URL);
+            url.searchParams.set('message', text);
+            url.searchParams.set('input', text);
+            url.searchParams.set('text', text);
+            url.searchParams.set('source', 'portfolio-chatbot');
+            url.searchParams.set('page', window.location.pathname);
+
+            const response = await fetch(url.toString(), {
+                method: 'GET',
+            });
+
+            if (!response.ok) {
+                throw new Error(`Webhook request failed with status ${response.status}`);
+            }
+        }
+
+        async function respondTo(text) {
+            addMessage(text, true);
+            try {
+                await sendToWebhook(text);
+            } catch (error) {
+                console.error('Chat webhook error:', error);
+            }
+        }
+
+        function handleChatSubmit(e) {
+            e.preventDefault();
+            const text = chatInput.value.trim();
+            if (!text) return;
+            chatInput.value = '';
+            respondTo(text);
+        }
+
+        function sendQuick(text) {
+            respondTo(text);
         }
     </script>
 </body>

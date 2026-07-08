@@ -1,0 +1,32 @@
+/* ==========================================================
+   Global Typography — change the site-wide font HERE only.
+   Swap the @import URL and --font-sans value to use a
+   different typeface across every page.
+   ========================================================== */
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap');
+
+:root {
+    --font-sans: 'Plus Jakarta Sans', 'Inter', 'Segoe UI', system-ui, -apple-system, sans-serif;
+}
+
+html,
+body {
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+}
+
+/* Form controls don't inherit the body font by default */
+button,
+input,
+textarea,
+select {
+    font-family: var(--font-sans);
+}
+
+/* Slightly tighter tracking on large headings for a polished look */
+h1,
+h2 {
+    letter-spacing: -0.02em;
+}
