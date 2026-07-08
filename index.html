@@ -426,6 +426,7 @@
                         <i data-lucide="arrow-up" class="w-4 h-4"></i>
                     </button>
                 </form>
+                <p id="chatWarning" class="mt-2 hidden text-[11px] font-medium text-red-500">Please type a message before sending.</p>
             </div>
         </div>
 
@@ -465,6 +466,16 @@
         const chatPanel = document.getElementById('chatPanel');
         const chatMessages = document.getElementById('chatMessages');
         const chatInput = document.getElementById('chatInput');
+        const chatWarning = document.getElementById('chatWarning');
+
+        function showChatWarning(message) {
+            chatWarning.textContent = message;
+            chatWarning.classList.remove('hidden');
+        }
+
+        function hideChatWarning() {
+            chatWarning.classList.add('hidden');
+        }
 
         function toggleChat() {
             const isOpen = !chatPanel.classList.contains('chat-hidden');
@@ -488,8 +499,8 @@
             return bubble;
         }
 
-        async function sendToWebhook(text) {
-            const url = `${CHAT_WEBHOOK_URL}?chatInput=${encodeURIComponent(text)}`;
+        async function sendToWebhook(userMessage) {
+            const url = `${CHAT_WEBHOOK_URL}?chatInput=${encodeURIComponent(userMessage)}`;
             const response = await fetch(url, {
                 method: 'GET',
             });
@@ -502,10 +513,10 @@
             return data.output;
         }
 
-        async function respondTo(text) {
-            addMessage(text, true);
+        async function respondTo(userMessage) {
+            addMessage(userMessage, true);
             try {
-                const botReply = await sendToWebhook(text);
+                const botReply = await sendToWebhook(userMessage);
                 addMessage(botReply || 'Sorry, something went wrong. Please try again or email me directly.', false);
             } catch (error) {
                 console.error('Chat webhook error:', error);
@@ -515,13 +526,19 @@
 
         function handleChatSubmit(e) {
             e.preventDefault();
-            const text = chatInput.value.trim();
-            if (!text) return;
+            const userMessage = chatInput.value.trim();
+            if (!userMessage) {
+                showChatWarning('Please type a message before sending.');
+                return;
+            }
+
+            hideChatWarning();
             chatInput.value = '';
-            respondTo(text);
+            respondTo(userMessage);
         }
 
         function sendQuick(text) {
+            hideChatWarning();
             respondTo(text);
         }
     </script>
