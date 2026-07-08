@@ -489,14 +489,9 @@
         }
 
         async function sendToWebhook(text) {
-            const response = await fetch(CHAT_WEBHOOK_URL, {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                },
-                body: JSON.stringify({
-                    chatInput: text,
-                }),
+            const url = `${CHAT_WEBHOOK_URL}?chatInput=${encodeURIComponent(text)}`;
+            const response = await fetch(url, {
+                method: 'GET',
             });
 
             if (!response.ok) {
